@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "vercel-build": "node build-robust.js"
+    "vercel-build": "node build-robust.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.56.0",
