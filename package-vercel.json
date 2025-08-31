@@ -8,8 +8,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node build-simple.js",
+    "preview": "vite preview",
+    "vercel-build": "node build-simple.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.56.0",
