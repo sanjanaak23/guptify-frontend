@@ -48,7 +48,7 @@ export default function FileList({ files, onUpdate }) {
       setDeletingFile(fileId);
       
       const token = (await supabase.auth.getSession()).data.session?.access_token;
-      const response = await fetch(`http://localhost:3001/files/${fileId}`, {
+      const response = await fetch(`${API_URL}/files/${fileId}`, {
   method: 'DELETE',
   headers: {
     'Authorization': `Bearer ${token}`

@@ -91,21 +91,28 @@ if (currentFolder) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white shadow">
+      <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <h1 className="text-xl md:text-2xl font-bold text-gray-900">
-            Guptify
-          </h1>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center">
+            <h1 className="text-xl md:text-2xl font-bold text-gray-900 flex items-center">
+              <span className="mr-2">🔐</span>
+              Guptify
+            </h1>
+            <span className="hidden sm:block ml-3 text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+              Your Secret Cloud Space
+            </span>
+          </div>
+          <div className="flex items-center space-x-3">
             <button
               onClick={() => setShowTrash(true)}
-              className="text-sm text-gray-700 hover:text-gray-900 px-2 py-1"
+              className="text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-200 flex items-center"
             >
-              🗑️ Trash
+              <span className="mr-1">🗑️</span>
+              <span className="hidden sm:inline">Trash</span>
             </button>
             <button
               onClick={handleSignOut}
-              className="text-sm text-gray-700 hover:text-gray-900 px-2 py-1"
+              className="text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-200"
             >
               Sign out
             </button>
@@ -120,8 +127,9 @@ if (currentFolder) {
           <div className="md:hidden mb-4">
             <button
               onClick={() => setShowMobileFolders(!showMobileFolders)}
-              className="w-full bg-indigo-600 text-white py-2 rounded-md flex items-center justify-center"
+              className="w-full bg-white border border-gray-200 text-gray-700 py-3 rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-50 transition-colors duration-200"
             >
+              <span className="mr-2">📂</span>
               {showMobileFolders ? 'Hide Folders' : 'Show Folders'}
               <span className="ml-2">{showMobileFolders ? '↑' : '↓'}</span>
             </button>

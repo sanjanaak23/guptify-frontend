@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
+import { API_URL } from '../lib/config';
 
 export default function SearchBar({ onSearchResults, onClearSearch }) {
   const [query, setQuery] = useState('');
@@ -36,7 +37,7 @@ export default function SearchBar({ onSearchResults, onClearSearch }) {
       if (filters.dateFrom) params.append('dateFrom', filters.dateFrom);
       if (filters.dateTo) params.append('dateTo', filters.dateTo);
 
-      const response = await fetch(`http://localhost:3001/files/search?${params.toString()}`, {
+      const response = await fetch(`${API_URL}/files/search?${params.toString()}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

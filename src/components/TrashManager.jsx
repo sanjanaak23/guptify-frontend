@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
+import { API_URL } from '../lib/config';
 
 export default function TrashManager({ isOpen, onClose }) {
   const [trashItems, setTrashItems] = useState([]);
@@ -15,7 +16,7 @@ export default function TrashManager({ isOpen, onClose }) {
     try {
       setLoading(true);
       const token = (await supabase.auth.getSession()).data.session?.access_token;
-      const response = await fetch('http://localhost:3001/files/trash', {
+      const response = await fetch(`${API_URL}/files/trash`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -35,7 +36,7 @@ export default function TrashManager({ isOpen, onClose }) {
   const restoreItem = async (itemId) => {
     try {
       const token = (await supabase.auth.getSession()).data.session?.access_token;
-      const response = await fetch(`http://localhost:3001/files/${itemId}/restore`, {
+      const response = await fetch(`${API_URL}/files/${itemId}/restore`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -57,7 +58,7 @@ export default function TrashManager({ isOpen, onClose }) {
 
     try {
       const token = (await supabase.auth.getSession()).data.session?.access_token;
-      const response = await fetch(`http://localhost:3001/files/${itemId}/permanent`, {
+      const response = await fetch(`${API_URL}/files/${itemId}/permanent`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -79,7 +80,7 @@ export default function TrashManager({ isOpen, onClose }) {
 
     try {
       const token = (await supabase.auth.getSession()).data.session?.access_token;
-      const response = await fetch('http://localhost:3001/files/trash/empty', {
+      const response = await fetch(`${API_URL}/files/trash/empty`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

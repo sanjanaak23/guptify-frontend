@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
+import { API_URL } from '../lib/config';
 
 export default function FilePreview({ file, onClose }) {
   const [previewData, setPreviewData] = useState(null);
@@ -16,7 +17,7 @@ export default function FilePreview({ file, onClose }) {
       setError(null);
       
       const token = (await supabase.auth.getSession()).data.session?.access_token;
-      const response = await fetch(`http://localhost:3001/files/${file.id}/preview`, {
+      const response = await fetch(`${API_URL}/files/${file.id}/preview`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
