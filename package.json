@@ -9,9 +9,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
+    "build": "yarn vite build",
     "preview": "vite preview",
-    "vercel-build": "npx vite build"
+    "vercel-build": "yarn vite build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.56.0",
