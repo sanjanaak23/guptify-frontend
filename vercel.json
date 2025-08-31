@@ -1,12 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "npm ci && npm run build",
+  "buildCommand": "cp package-vercel.json package.json && npm install && npm run build",
   "outputDirectory": "dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm ci",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "framework": "vite",
+  "installCommand": "npm install",
+  "functions": {},
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
