@@ -13,10 +13,12 @@
 2. **Configure Environment Variables**:
    In your Vercel project settings, add these environment variables:
    ```
-   VITE_SUPABASE_URL=your_supabase_project_url
-   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-   VITE_API_URL=your_backend_api_url
+   VITE_SUPABASE_URL=https://gfazfolhlvqijkaxstbi.supabase.co
+   VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmYXpmb2xobHZxaWprYXhzdGJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyODgwNDksImV4cCI6MjA2ODg2NDA0OX0.Y_WY2d2c1VX3pqYf2Pm5SA99CKQFNtuhp4wnKsCiDTk
+   VITE_API_URL=https://your-backend-api-url.com
    ```
+   
+   **Important**: Replace `VITE_API_URL` with your actual backend API URL when you deploy your backend.
 
 3. **Deploy**:
    - Vercel will automatically build and deploy your project
