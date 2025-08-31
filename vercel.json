@@ -1,13 +1,4 @@
 {
   "version": 2,
-  "buildCommand": "npm run vercel-build",
-  "outputDirectory": "dist",
-  "installCommand": "npm ci",
-  "functions": {},
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "outputDirectory": "dist"
 }

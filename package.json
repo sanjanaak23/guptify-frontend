@@ -4,14 +4,14 @@
   "version": "1.0.0",
   "type": "module",
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=20.0.0",
     "npm": ">=8.0.0"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npx vite build",
     "preview": "vite preview",
-    "vercel-build": "node build-robust.cjs"
+    "vercel-build": "npx vite build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.56.0",
